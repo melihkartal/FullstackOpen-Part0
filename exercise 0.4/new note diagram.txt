@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant browser
+    participant server
+    
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note //send data to server
+    server-->>browser: new note // HTTP/2 302  
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    server-->>browser: notes file // HTTP/2 200 
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    server-->>browser: CSS FILE // HTTP/2 200 
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    server-->>browser: JavaScript FILE // HTTP/2 200 
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    server-->>browser: JSON FILE // HTTP/2 200

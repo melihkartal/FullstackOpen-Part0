@@ -1,0 +1,15 @@
+ sequenceDiagram
+    participant browser
+    participant server
+    
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa //send data to server
+    server-->>browser: Single Page Application (SPA) document // HTTP/2 200  
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    server-->>browser: css file // HTTP/2 200 
+    browser->>server: GET  https://studies.cs.helsinki.fi/exampleapp/spa.js
+    server-->>browser: JavaScript file // HTTP/2 200 
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    server-->>browser: JSON  FILE with all the data // HTTP/2 200 
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    server-->>browser: json file with created note  // HTTP/2 201 
+    
